@@ -1,5 +1,5 @@
 with src as (
-  select * from dbt_ref{{ ref('customers') }}
+  select * from {{ ref('customers') }}
 )
 
 select * from src

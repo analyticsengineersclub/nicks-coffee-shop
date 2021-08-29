@@ -2,7 +2,8 @@ version: 2
 
 sources:
   - name: coffee_shop
-    project: analytics-engineers-clu
+    project: analytics-engineers-club
+	
     tables:
       - name: customers
         columns:
@@ -20,9 +21,9 @@ sources:
             tests:
               - unique
               - not_null
-	        - name: customer_id
+	  - name: customer_id
             tests:
-	            - not_null
-	        - name: created_at
-	          tests:
-	            - not_null
+	      - not_null
+	  - name: created_at
+	    tests:
+	      - not_null

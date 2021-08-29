@@ -19,4 +19,6 @@ select
 from customers
 left outer join orders on customers.id = orders.customer.id
 group by 1,2,3
-order by first_order_at
+)
+
+select * from transformed

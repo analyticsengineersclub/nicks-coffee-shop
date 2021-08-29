@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: coffee_shop
     project: analytics-engineers-club
-	
+
     tables:
       - name: customers
         columns:
@@ -12,7 +12,7 @@ sources:
               - unique
               - not_null
           - name: name
-            tests: 
+            tests:
               - not_null
 
       - name: orders
@@ -21,9 +21,9 @@ sources:
             tests:
               - unique
               - not_null
-	  - name: customer_id
+          - name: customer_id
             tests:
-	      - not_null
-	  - name: created_at
-	    tests:
-	      - not_null
+              - not_null
+          - name: created_at
+            tests:
+              - not_null

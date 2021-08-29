@@ -16,7 +16,7 @@ transformed as (
      min(orders.created_at) as first_order_at,
      coalesce(count(distinct orders.id),0) as number_of_orders
   from customers
-  left outer join orders on customers.id = orders.customer.id
+  left outer join orders on customers.id = orders.customer_id
   group by 1,2,3
 )
 

@@ -18,14 +18,37 @@ customers as (
     select * from {{ ref('stg_customers') }}
 ),
 
-customer_status as (
-    select * from {{ ref('stg_customers__customer_status') }}
-),
-
 transformed as (
     select
-        null
-    from customers
+        orders.order_id,
+        orders.created_at,
+        products.product_id,
+        products.product_name,
+        products.product_category,
+        prices.product_price as price_charged,
+        orders.customer_id,
+        row_number over (partition by orders.customer_id order by orders.created_at) as customer_order_index
+    from orders
+    inner join order_product_lookup using (order_id)
+    inner join products using (product_id)
+    inner join prices on prices.product_id = products.product_id
+        and orders.created_at between prices.valid_from and prices.valid_to
+),
+
+final as (
+    select
+        order_id,
+        created_at,
+        product_id,
+        product_name,
+        product_category,
+        price_charged,
+        customer_id,
+        case 
+            when customer_order_index = 1 then true 
+            else false 
+        end as is_first_order_by_customer
+    from transformed
 )
 
-select * from transformed
+select * from final

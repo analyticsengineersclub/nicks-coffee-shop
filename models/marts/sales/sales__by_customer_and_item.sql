@@ -32,8 +32,8 @@ transformed as (
     inner join order_product_lookup using (order_id)
     inner join products using (product_id)
     left outer join prices on prices.product_id = products.product_id
-        and prices.valid_from >= orders.created_at
-        and priced.valid_to <= orders_created_at
+        and prices.valid_from <= orders.created_at
+        and prices.valid_to >= orders_created_at
 ),
 
 final as (

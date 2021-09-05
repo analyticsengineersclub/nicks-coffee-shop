@@ -27,7 +27,7 @@ transformed as (
         products.product_category,
         prices.product_price as price_charged,
         orders.customer_id,
-        row_number over (partition by orders.customer_id order by orders.created_at) as customer_order_index
+        row_number() over (partition by orders.customer_id order by orders.created_at) as customer_order_index
     from orders
     inner join order_product_lookup using (order_id)
     inner join products using (product_id)

@@ -37,7 +37,4 @@ sources:
             tests:
               - not_null
           - name: ended_at
-            tests:
-              - not_null
-
 

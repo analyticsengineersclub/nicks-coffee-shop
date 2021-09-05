@@ -3,4 +3,4 @@ version: 2
 models:
     name:
       - stg_customers__customer_status
-        description: "Each customer with a corresponding column as to whether they have ever placed an order to date. Where they have ordered, num_orders will be > 0."
+        description: "Each customer with a corresponding column as to whether they have ever placed an order to date. Where they have ordered, num_orders will be greater than 0."

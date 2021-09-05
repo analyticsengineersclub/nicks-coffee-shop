@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: products
+  - name: coffee_shop
     project: analytics-engineers-club
 
     tables:

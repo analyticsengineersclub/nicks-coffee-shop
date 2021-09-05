@@ -4,7 +4,7 @@ with src as (
 
 transformed as (
   select
-    id as as order_id,
+    id as order_id,
     customer_id,
     created_at,
   from src

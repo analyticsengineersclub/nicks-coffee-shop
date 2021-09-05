@@ -4,9 +4,9 @@ with src as (
 
 transformed as (
   select
-    customers.id as customer_id,
-    customers.name as customer_name,
-    customers.email as customer_email
+    id as customer_id,
+    name as customer_name,
+    email as customer_email
   from src
 )
 

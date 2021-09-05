@@ -6,7 +6,7 @@ transformed as (
   select
     product_id,
     price as product_price,
-    created_at as valid_from.
+    created_at as valid_from,
     ended_at as valid_to
   from src
 )

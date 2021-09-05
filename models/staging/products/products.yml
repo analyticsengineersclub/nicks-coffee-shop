@@ -1,33 +1,42 @@
 version: 2
 
 sources:
-  - name: orders
+  - name: products
     project: analytics-engineers-club
 
     tables:
-      - name: orders
+      - name: products
         columns:
           - name: id
             tests:
               - unique
               - not_null
-          - name: customer_id
+          - name: name
+            tests:
+              - not_null
+          - name: category
             tests:
               - not_null
           - name: created_at
             tests:
               - not_null
 
-      - name: order_items
+      - name: product_prices
         colummns:
           - name: id
             tests:
               - unique
               - not_null
-          - name: order_id
+          - name: product_id
             tests:
               - not_null
-          - name: product_id
+          - name: price
+            tests:
+              - not_null
+          - name: created_at
+            tests:
+              - not_null
+          - name: ended_at
             tests:
               - not_null
 

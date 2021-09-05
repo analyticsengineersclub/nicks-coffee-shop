@@ -1,5 +1,5 @@
 version: 2
 
 models:
-    name: sales__by_customer_and_item
-    description: "A sales data model, suitable for aggregation, to be queried by BI tools. The grain is each individual item sold."
+    - name: sales__by_customer_and_item
+      description: "A sales data model, suitable for aggregation, to be queried by BI tools. The grain is each individual item sold."
